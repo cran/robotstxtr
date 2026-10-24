@@ -1,0 +1,18 @@
+citHeader("To cite the robotstxtr package in publications, use:")
+
+# The year the installed version was published, not the year citation() runs:
+# CRAN's Date/Publication, else the build's Packaged stamp, else today.
+stamp <- c(meta$`Date/Publication`, meta$Packaged)
+year <- if (length(stamp)) substr(stamp[[1]], 1, 4) else format(Sys.Date(), "%Y")
+note <- sprintf("R package version %s", meta$Version)
+
+bibentry(
+  bibtype = "Manual",
+  title   = "{robotstxtr}: Engine-Aware 'robots.txt' Policy with Google's Matcher Algorithm",
+  author  = person("Bart", "Turczynski",
+                   comment = c(ORCID = "0000-0002-8788-7980")),
+  year    = year,
+  note    = note,
+  doi     = "10.5281/zenodo.23018995",
+  url     = "https://gitlab.com/bart-turczynski/robotstxtr"
+)
